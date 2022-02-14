@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Supermercado+One&family=Ubuntu:wght@300;500&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(11, 26, 65);
+}
+
+li , a{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500px;
+    color: aliceblue;
+    text-decoration: none;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: rgb(59, 70, 231);
+    box-shadow: 0px 4px 10px 0 rgb(59, 59, 59);
+    z-index: 5;
+    position: fixed;
+    width:100%
+}
+.logo{
+    color: aliceblue;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: "Montserrat", cursive;
+}
+.navi{
+    background-color: transparent;
+    list-style: none;
+}
+
+.navi li {
+    display: inline-block;
+    padding: 0 100px;
+}
+.navi li a{
+    transition: 0.3s;
+}
+.navi li a:hover{
+    color: rgb(255, 30, 0);
+}
+.Home{
+    padding: 9px 25px;
+    background-color: rgba(0,140,255,1);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.Home:hover{
+    background-color: rgba(0,140,255,0.7);
+}
+.body1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.ball{
+    /* display: flex;
+    flex-direction: row-reverse;
+    align-items: center; */
+    position: relative;
+    width: 50%;
+    height: 1400px;
+    background-image:linear-gradient(to bottom,#e79879,rgb(64, 31, 126));
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 20px 4px 20px 0 rgb(99, 105, 139);
+    margin-left: -400px;
+    z-index: 3;
+    
+}
+
+.safe{
+    max-width: 1000px;
+    animation: MoveUpDown 6s ease-in-out infinite;
+    position: absolute;
+    left: 10px;
+    bottom: 25%;
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-100px);
+    }
+  }
+.getS{
+    width:500px;
+    height: 70px;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 90px;
+    font-size: 26px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid blue;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.getS:hover{
+    background-color: blue;
+}
+footer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+h2{
+    font-size: 20px;
+    color: aliceblue;
+    margin: 0 60px;
+}
+.navi1{
+    list-style: none;
+}
+.navi1 li {
+    display: inline-block;
+    padding: 0 100px;
+}
+.navi1 li , .navi1 a{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+.navi1 a:hover{
+    color:red;
+}
