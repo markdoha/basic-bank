@@ -1,11 +1,23 @@
 <?php
-if (!$conn =  mysqli_connect("localhost", "root", "", "not a bank")) {
+if (!$conn =  mysqli_connect("localhost", "id18456817_basicbank", "7%9zzK@T<u2DR?m", "id18456817_localhost")) {
   die("the connection failed");
 }
+
 $query = "select * from customers";
 $result = mysqli_query($conn, $query);
+if( isset($_POST['send']) ){
+    $query1 = "UPDATE `customers` SET balance=balance - '$_POST[amount]' where email='$_POST[sender]' ";
+    $query2 = "UPDATE `customers` SET balance= balance +'$_POST[amount]' where email='$_POST[reciever]' ";
+    $query1_run = mysqli_query($conn, $query1);
+    $query2_run = mysqli_query($conn, $query2);
+    $query3 = "INSERT INTO transactions(froom, too, amount) VALUES ('$_POST[sender]','$_POST[reciever]', '$_POST[amount]')";
+    $query3_run = mysqli_query($conn, $query3);
+    header('Location: ./veiw.php');
+     echo " <script type='text/javascript'>alert('success')</script>";
+}
 ?>
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -53,19 +65,6 @@ $result = mysqli_query($conn, $query);
                     </form>
             </div>
     </div>
-            <?php 
-            if( isset($_POST['send']) ){
-                $query1 = "UPDATE `customers` SET balance=balance - '$_POST[amount]' where email='$_POST[sender]' ";
-                $query2 = "UPDATE `customers` SET balance= balance +'$_POST[amount]' where email='$_POST[reciever]' ";
-                $query1_run = mysqli_query($conn, $query1);
-                $query2_run = mysqli_query($conn, $query2);
-                $query3 = "INSERT INTO transactions(froom, too, amount) VALUES ('$_POST[sender]','$_POST[reciever]', '$_POST[amount]')";
-                $query3_run = mysqli_query($conn, $query3);
-                header('Location: ./veiw.php');
-                 echo " <script type='text/javascript'>alert('success')</script>";
-            }
-            
-            ?>
             <div class="workplz">
             <table>
                 <thead>

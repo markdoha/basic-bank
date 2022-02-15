@@ -1,5 +1,5 @@
 <?php
-if (!$conn =  mysqli_connect("localhost", "root", "", "not a bank")) {
+if (!$conn =  mysqli_connect("localhost", "id18456817_basicbank", "7%9zzK@T<u2DR?m", "id18456817_localhost")) {
   die("the connection failed");
 }
 $query = "select * from transactions";
